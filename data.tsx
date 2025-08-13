@@ -58,19 +58,19 @@ export const itemsNavbar = [
 export const dataSlider = [
     {
         id: 1,
-        url: "/slider-1.jpg",
+        url: "/images/slider-1.jpg",
     },
     {
         id: 2,
-        url: "/slider-2.jpg",
+        url: "/images/slider-2.jpg",
     },
     {
         id: 3,
-        url: "/slider-3.jpg",
+        url: "/images/slider-3.jpg",
     },
     {
         id: 4,
-        url: "/slider-4.jpg",
+        url: "/images/slider-4.jpg",
     },
 ]
 

@@ -8,7 +8,7 @@ const NavBar = () => {
                 {itemsNavbar.map((item) => (
                     /* Recorrer itemsNav {item.icon} */
                     <div key={item.id} className="cursor-pointer hover:dark-bg-slate-8090 hover:bg-slate-400 px-3 py-2 rounder-full transition duration-150">
-                        <a href={item.link}>
+                        <a href={item.link} className="text-blue-500 dark:text-white hover:text-blue-700 dark:hover:text-blue-300">
                             {item.icon}
                         </a>
                     </div>

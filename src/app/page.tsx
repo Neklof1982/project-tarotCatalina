@@ -3,7 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import NavBar from "@/components/navbar";
-import Footer from "@/components/footer";
+import Introduction from "@/components/introduction";
+import AboutMe from "@/components/about-me";
+import Card from "@/components/card";
+
 interface TarotCard {
   name: string;
   image: string;
@@ -28,27 +31,28 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-8 pb-0 gap-16 sm:p-20"> 
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div className="flex flex-col items-center justify-center min-h-[calc(6vh-80px)] p-8 pb-0 gap-16 sm:p-20">
+      <main className="flex flex-col gap-[32px] items-center">
         <NavBar />
-        <h1 className="text-3xl sm:text-4xl font-bold text-center">Descubre tu Destino con Cata</h1>
-        <p className="text-lg sm:text-xl text-center mb-8">
+        <Introduction />
+        <h2 className="text-lg sm:text-3xl font-bold text-center">Descubre tu Destino con Cata</h2>
+        <p className="text-lg text-gray-400 sm:text-xl text-center mb-8">
           Haz clic en el botón para recibir tu lectura de tarot.
         </p>
 
         <button
           onClick={drawCards}
-          className="bg-[#ff6347] text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-[#e05337] transition-colors"
+           className="bg-[#1a73e8] text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-[#1667c1] transition-colors dark:bg-[#1a73e8] dark:hover:bg-[#1667c1]"
         >
           ¡Tira las cartas!
         </button>
 
         {cardsDrawn.length > 0 && (
           <div className="mt-16">
-            <h2 className="text-2xl font-semibold text-center mb-6">Tu lectura de tarot:</h2>
+            <h2 className="text-3xl font-semibold text-center mb-6">Tu lectura de tarot:</h2>
             <div className="flex gap-8 justify-center flex-wrap">
-              {cardsDrawn.map((card, index) => (
-                <div key={index} className="text-center">
+              {cardsDrawn.map((card) => (
+                <div key={card.name} className="text-center sm:w-1/3 md:w-1/4 lg:w-1/4">
                   <Image
                     src={card.image}
                     alt={card.name}
@@ -56,12 +60,14 @@ export default function Home() {
                     height={250}
                     className="rounded-lg"
                   />
-                  <p className="mt-2 font-medium">{card.name}</p>
+                  <p className="mt-2 font-medium text-center">{card.name}</p>
                 </div>
               ))}
             </div>
           </div>
         )}
+        <AboutMe />
+        <Card />
       </main>
     </div>
   );
