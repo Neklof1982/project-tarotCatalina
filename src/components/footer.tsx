@@ -2,7 +2,7 @@ import { FaInstagram, FaFacebookF, FaTiktok, FaPinterestP } from 'react-icons/fa
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8 mt-0">
+    <footer className="bg-[#4b1248] text-white py-8 mt-0">
       {/* Grid de tres columnas */}
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-y-8 gap-x-16 text-center justify-items-center">
         {/* Columna de contacto */}
@@ -39,10 +39,10 @@ const Footer = () => {
         <div className="space-y-2">
           <h3 className="font-semibold text-lg">Clases de Tarot</h3>
           <ul className="list-none space-y-1">
-            <li>Introducción al Tarot</li>
-            <li>Lecturas avanzadas</li>
-            <li>El simbolismo de las cartas</li>
-            <li>Curso de interpretación de cartas</li>
+            <li>Lectura General</li>
+            <li>Lectura de Amor o Relaciones</li>
+            <li>Lectura de Decisiones o Elección</li>
+            <li>Lectura de Pasado, Presente y Futuro</li>
           </ul>
         </div>
       </div>

@@ -35,14 +35,14 @@ export default function Home() {
       <main className="flex flex-col gap-[32px] items-center">
         <NavBar />
         <Introduction />
-        <h2 className="text-lg sm:text-3xl font-bold text-center">Descubre tu Destino con Cata</h2>
+        <h2 className="text-lg sm:text-3xl font-bold text-center">Déjate guiar por las cartas con Cata</h2>
         <p className="text-lg text-gray-400 sm:text-xl text-center mb-8">
           Haz clic en el botón para recibir tu lectura de tarot.
         </p>
 
         <button
           onClick={drawCards}
-           className="bg-[#1a73e8] text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-[#1667c1] transition-colors dark:bg-[#1a73e8] dark:hover:bg-[#1667c1]"
+          className="py-3 px-8 rounded-full text-lg font-semibold text-white relative overflow-hidden bg-gradient-to-r from-[#f0c27b] via-[#f0c27b] to-[#4b1248] hover:from-[#4b1248] hover:via-[#4b1248] hover:to-[#f0c27b] transition-all duration-500 dark:from-[#f0c27b] dark:to-[#4b1248]"
         >
           ¡Tira las cartas!
         </button>
@@ -56,7 +56,7 @@ export default function Home() {
                   <Image
                     src={card.image}
                     alt={card.name}
-                    width={150}
+                    width={175}
                     height={250}
                     className="rounded-lg"
                   />
@@ -67,8 +67,27 @@ export default function Home() {
           </div>
         )}
         <AboutMe />
-        <Card />
-      </main>
-    </div>
+        <div className="mt-16 flex gap-8 flex-wrap justify-center">
+          <Card title="Lectura General" description="¿No sabes por dónde empezar? Esta tirada te da una visión clara 
+                    de lo que está pasando en tu vida, cubriendo amor, trabajo y bienestar. 
+                    ¡Perfecta para obtener una perspectiva completa!" active
+          />
+          <Card title="Lectura de Amor o Relaciones" description="¿Dudas sobre tu relación o el amor en tu vida? 
+                    Con esta lectura descubrirás qué está pasando en tu mundo emocional, qué está bloqueando tu felicidad 
+                    y cómo mejorar tus conexiones personales." active
+          />
+          <Card title="Lectura de Decisiones o Elección" description="¿Tienes que tomar una gran decisión? 
+                    Esta tirada te ayuda a ver las opciones disponibles y qué resultados podrías esperar, 
+                    para que puedas elegir con confianza el camino correcto." active
+          />
+          <Card title="Lectura de Pasado, Presente y Futuro" description="Esta lectura te conecta con tu historia personal: 
+                    lo que has vivido, lo que está pasando ahora y lo que está por venir. 
+                    Perfecta para comprender cómo tu pasado está influenciando el presente y lo que puedes esperar." active
+          />
+        </div>
+      </main >
+    </div >
   );
 }
+
+
