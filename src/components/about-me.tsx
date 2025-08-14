@@ -1,5 +1,9 @@
 import Image from "next/image";
 
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
+import { dataSlider } from "../../data";
+
+
 const AboutMe = () => {
     return (
         <div>
@@ -9,11 +13,30 @@ const AboutMe = () => {
                 <div className="grid md:grid-cols-2">
                     <div className="py-12 md:py-0 flex items-center justify-cneter">
                         <div className="py-12 md:py-0 flex items-center justify-center">
-                            {/* CAROUSEL */}
-                            <Image src="/images/slider-1.jpg" alt="Profile pic" width={400} height={400} className="rounded-4xl" />
+                            {/* CAROUSEL npx shadcn@latest add carousel */}
+                            <Carousel opts={{
+                                align: "start"
+                            }}
+                            orientation="vertical"
+                            className="m-full max-w-xs h-fit"
+                            >
+                                <CarouselContent className="-mt-1 h-[250px]">
+                                    {dataSlider.map((data) => (
+                                        <CarouselItem key={data.id}>
+                                            <div className="flex items-center justify-center">
+                                                <Image src={data.url} alt="Image" width={400} height={400} className="w-full h-auto rounded-4xl" />
+                                            </div>
+                                        </CarouselItem>
+                                    )
+                                )}
+                                </CarouselContent>
+                                <CarouselPrevious />
+                                <CarouselNext />
+                            </Carousel>
+                            {/* <Image src="/images/slider-1.jpg" alt="Profile pic" width={400} height={400} className="rounded-4xl" /> */}
                         </div>
                     </div>
-                    <p className="my-8">
+                    <p className="my-8 text-justify">
                         Soy una tarotista que encuentra su inspiración en la conexión profunda con las cartas y los
                         mensajes que el universo tiene para ofrecer. Cuando no estoy leyendo el tarot, disfruto de la
                         serenidad de la meditación y el contacto con la naturaleza, ya que creo que la paz interior es

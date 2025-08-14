@@ -1,4 +1,5 @@
-import { FaBell, FaBook, FaBriefcase, FaBrush, FaCode, FaHome, FaInbox, FaMailBulk, FaPhone, FaUser, FaUsers, FaWrench } from 'react-icons/fa';
+import { FaBook, FaBookReader, FaBriefcase, FaHome, FaInbox, FaMailBulk, FaPhone, FaUser, FaUsers, FaWrench } from 'react-icons/fa';
+import { FaBookJournalWhills, FaComment } from 'react-icons/fa6';
 
 export const dataAboutMe = [
     {
@@ -38,12 +39,12 @@ export const itemsNavbar = [
         id: 3,
         title: "Book",
         icon: <FaBook size={20} />,
-        link: "#services",
+        link: "#lecture",
     },
     {
         id: 4,
         title: "Target",
-        icon: <FaCode size={20} />,
+        icon: <FaComment size={20} />,
         link: "#portfolio",
     },
     {

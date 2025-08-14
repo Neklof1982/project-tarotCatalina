@@ -17,7 +17,7 @@ const Footer = () => {
         {/* Columna sobre mí */}
         <div className="space-y-2">
           <h3 className="font-semibold text-lg">Sobre mí</h3>
-          <p>Sobre mi</p>
+          <a href='#about-me'>Sobre mi</a>
           <p>Política de Privacidad</p>
           <div className="flex justify-center space-x-4 mt-4">
             <a href="https://instagram.com" target="_blank" aria-label="Instagram">
@@ -39,10 +39,10 @@ const Footer = () => {
         <div className="space-y-2">
           <h3 className="font-semibold text-lg">Clases de Tarot</h3>
           <ul className="list-none space-y-1">
-            <li>Lectura General</li>
-            <li>Lectura de Amor o Relaciones</li>
-            <li>Lectura de Decisiones o Elección</li>
-            <li>Lectura de Pasado, Presente y Futuro</li>
+            <li><a href='#lectura-general'>Lectura General</a></li>
+            <li><a href='#lectura-amor'>Lectura de Amor o Relaciones</a></li>
+            <li><a href='#lectura-decision'>Lectura de Decisiones o Elección</a></li>
+            <li><a href='#lectura-ppf'>Lectura de Pasado, Presente y Futuro</a></li>
           </ul>
         </div>
       </div>

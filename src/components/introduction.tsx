@@ -15,6 +15,7 @@ const Introduction = () => {
                     width={500} 
                     height={500} 
                     className="rounded-full p-10" 
+                    priority
                 />
             </div>
         </div>

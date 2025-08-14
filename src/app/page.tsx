@@ -31,7 +31,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[calc(6vh-80px)] p-8 pb-0 gap-16 sm:p-20">
+    <div className="flex flex-col items-center justify-center min-h-[calc(6vh-100px)] p-8 pb-0 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] items-center">
         <NavBar />
         <Introduction />
@@ -67,23 +67,35 @@ export default function Home() {
           </div>
         )}
         <AboutMe />
-        <div className="mt-16 flex gap-8 flex-wrap justify-center">
-          <Card title="Lectura General" description="¿No sabes por dónde empezar? Esta tirada te da una visión clara 
+        <div className="-mt-8" id="lecture">
+          <h2 className="text-3xl font-semibold text-center mb-6">Lecturas</h2>
+          <h3 className="text-xl text-gray-400 text-center">Cada lectura es única</h3>
+        </div>
+        <div className="mt-8 flex gap-8 flex-wrap justify-center">
+          <div id="lectura-general">
+            <Card title="Lectura General" description="¿No sabes por dónde empezar? Esta tirada te da una visión clara 
                     de lo que está pasando en tu vida, cubriendo amor, trabajo y bienestar. 
                     ¡Perfecta para obtener una perspectiva completa!" active
-          />
-          <Card title="Lectura de Amor o Relaciones" description="¿Dudas sobre tu relación o el amor en tu vida? 
+            />
+          </div>
+          <div id="lectura-amor">
+            <Card title="Lectura de Amor o Relaciones" description="¿Dudas sobre tu relación o el amor en tu vida? 
                     Con esta lectura descubrirás qué está pasando en tu mundo emocional, qué está bloqueando tu felicidad 
                     y cómo mejorar tus conexiones personales." active
-          />
-          <Card title="Lectura de Decisiones o Elección" description="¿Tienes que tomar una gran decisión? 
+            />
+          </div>
+          <div id="lectura-decision">
+            <Card title="Lectura de Decisiones o Elección" description="¿Tienes que tomar una gran decisión? 
                     Esta tirada te ayuda a ver las opciones disponibles y qué resultados podrías esperar, 
                     para que puedas elegir con confianza el camino correcto." active
-          />
-          <Card title="Lectura de Pasado, Presente y Futuro" description="Esta lectura te conecta con tu historia personal: 
+            />
+          </div>
+          <div id="lectura-ppf">
+            <Card title="Lectura de Pasado, Presente y Futuro" description="Esta lectura te conecta con tu historia personal: 
                     lo que has vivido, lo que está pasando ahora y lo que está por venir. 
                     Perfecta para comprender cómo tu pasado está influenciando el presente y lo que puedes esperar." active
-          />
+            />
+          </div>
         </div>
       </main >
     </div >
