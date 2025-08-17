@@ -6,6 +6,7 @@ import NavBar from "@/components/navbar";
 import Introduction from "@/components/introduction";
 import AboutMe from "@/components/about-me";
 import Card from "@/components/card";
+import Testimonials from "@/components/testimonials";
 
 interface TarotCard {
   name: string;
@@ -31,7 +32,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[calc(6vh-100px)] p-8 pb-0 gap-16 sm:p-20">
+    <div className="flex flex-col items-center justify-center min-h-screen p-8 pb-0 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] items-center">
         <NavBar />
         <Introduction />
@@ -67,11 +68,11 @@ export default function Home() {
           </div>
         )}
         <AboutMe />
-        <div className="-mt-8" id="lecture">
-          <h2 className="text-3xl font-semibold text-center mb-6">Lecturas</h2>
+        <div className="-mt-6">
+          <h2 className="text-3xl font-semibold text-center mb-6" id="lecture">Lecturas</h2>
           <h3 className="text-xl text-gray-400 text-center">Cada lectura es única</h3>
         </div>
-        <div className="mt-8 flex gap-8 flex-wrap justify-center">
+        <div className="mt-1 flex gap-8 flex-wrap justify-center">
           <div id="lectura-general">
             <Card title="Lectura General" description="¿No sabes por dónde empezar? Esta tirada te da una visión clara 
                     de lo que está pasando en tu vida, cubriendo amor, trabajo y bienestar. 
@@ -97,6 +98,7 @@ export default function Home() {
             />
           </div>
         </div>
+        <Testimonials />
       </main >
     </div >
   );

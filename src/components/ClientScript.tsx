@@ -8,7 +8,7 @@ const ClientScript = () => {
     script.src = "https://kit.fontawesome.com/a076d05399.js";
     script.crossOrigin = "anonymous";
     document.body.appendChild(script);
-  }, []); // Solo se ejecuta una vez al montar el componente
+  }, []); // Solo se ejecuta al montar el componente
 
   return null; //  nada visualmente
 };
