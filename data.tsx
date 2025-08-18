@@ -1,4 +1,4 @@
-import { FaBook, FaBriefcase, FaHome, FaInbox, FaMailBulk, FaPhone, FaUser, FaUsers, FaWrench } from 'react-icons/fa';
+import { FaBook, FaBriefcase, FaHome, FaMailBulk, FaUser, FaUsers, FaWrench } from 'react-icons/fa';
 import { FaComment } from 'react-icons/fa6';
 
 export const dataAboutMe = [
@@ -74,30 +74,6 @@ export const dataSlider = [
         url: "/images/slider-4.jpg",
     },
 ]
-
-export const dataContact = [
-    {
-        id: 1,
-        title: "Teléfono",
-        subtitle: "+34 677 66 66 33",
-        link: "tel:+34677666633",
-        icon: <FaPhone />,
-    },
-    {
-        id: 2,
-        title: "Github",
-        subtitle: "github.com/ratasi",
-        link: "github.com/ratasi",
-       /* icon: <Code2 />,*/
-    },
-    {
-        id: 3,
-        title: "Email",
-        subtitle: "email@email.com",
-        link: "mailto:test@test.com",
-        icon: <FaInbox />,
-    },
-];
 
 export const dataTestimonials = [
   {

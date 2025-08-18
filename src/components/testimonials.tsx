@@ -7,7 +7,7 @@ const Testimonials = () => {
     return (
         <div className="mt-8 mb-6">
             <h2 className="text-3xl font-semibold text-center mb-6" id="testimonios">Testimonios</h2>
-            <h3 className="text-xl text-gray-400 text-center mb-6">Review de los clientes </h3>
+            <h3 className="text-xl text-gray-400 text-center mb-6">Review de los clientes</h3>
 
             <Carousel
                 opts={{

@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import Image from "next/image";
+
 import NavBar from "@/components/navbar";
 import Introduction from "@/components/introduction";
 import AboutMe from "@/components/about-me";
 import Card from "@/components/card";
 import Testimonials from "@/components/testimonials";
+import Contact from "@/components/contact";
 
 interface TarotCard {
   name: string;
@@ -99,6 +101,7 @@ export default function Home() {
           </div>
         </div>
         <Testimonials />
+        <Contact />
       </main >
     </div >
   );

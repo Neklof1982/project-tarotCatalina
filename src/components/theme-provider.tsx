@@ -14,7 +14,7 @@ export function ThemeProvider({
   }, []);
 
   if (!mounted) {
-    // Evita el desajuste de hidratación, muestra un renderizado vacío o cualquier contenido predeterminado
+    // Evita el desajuste 
     return <div />;
   }
 
