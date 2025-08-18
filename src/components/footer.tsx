@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Columna de clases de tarot */}
+        {/* Columna clases de tarot */}
         <div className="space-y-2">
           <h3 className="font-semibold text-lg">Clases de Tarot</h3>
           <ul className="list-none space-y-1">

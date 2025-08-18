@@ -1,16 +1,17 @@
 "use client"
-{/* Información obtenida shadcn.com/docs/dark-mode/next */}
+// Información obtenida shadcn.com/docs/dark-mode/next
 import * as React from "react"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
+// Información obtenida shadcn.com/components/dropdown-menu
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"; {/* Información obtenida shadcn.com/components/dropdown-menu */}
+} from "@/components/ui/dropdown-menu";
 
 export function ModeToggle() {
   const { setTheme } = useTheme()

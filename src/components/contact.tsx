@@ -39,7 +39,7 @@ const Contact = () => {
 
     return (
         <div className="mt-8 mb-6">
-            <h2 className="text-3xl font-semibold text-center mb-6" id="testimonios">Contacto</h2>
+            <h2 className="text-3xl font-semibold text-center mb-6" id="#contact">Contacto</h2>
             <h3 className="text-xl text-gray-400 text-center mb-6">Ponte en contacto conmigo</h3>
             <div className="mt-8 col-spam-2 ">
                 {/* FORM npx shadcn@latest add form */}
