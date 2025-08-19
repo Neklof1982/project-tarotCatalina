@@ -3,7 +3,7 @@ import Image from "next/image";
 const Introduction = () => {
     return ( 
         <div className="relative">
-            <div className="text-center" id="home">
+            <div className="text-center max-w-4xl mx-auto px-6" id="home">
                 <h2 className="text-3xl mb-3">Explora el mundo del</h2>
                 <h1 className="text-6xl font-bold mb-3 animate-fade-in animate-duration-1500">
                     <span className="text-gradient">Tarot</span>
