@@ -1,4 +1,5 @@
 import { FaInstagram, FaFacebookF, FaTiktok, FaPinterestP } from 'react-icons/fa';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -8,8 +9,8 @@ const Footer = () => {
         {/* Columna de contacto */}
         <div className="space-y-2">
           <h3 className="font-semibold text-lg">Contacto</h3>
-          <p>Mandame un correo</p>
-          <p>Horario:</p>
+          <Link href="/#contact" className="font-bold" aria-label="Enviar un correo">Mandame un correo</Link>
+          <p className='pt-1'>Horario:</p>
           <p>Lunes - Viernes</p>
           <p>18:00h - 20:00h</p>
         </div>
@@ -17,8 +18,8 @@ const Footer = () => {
         {/* Columna sobre mí */}
         <div className="space-y-2">
           <h3 className="font-semibold text-lg">Sobre mí</h3>
-          <a href='#about-me'>Sobre mi</a>
-          <p>Política de Privacidad</p>
+          <Link href="/#about-me" className='block'>Sobre mí</Link>
+          <Link href="/privacy">Política de Privacidad</Link>
           <div className="flex justify-center space-x-4 mt-4">
             <a href="https://instagram.com" target="_blank" aria-label="Instagram">
               <FaInstagram className="text-2xl hover:text-pink-500 transition-colors" />

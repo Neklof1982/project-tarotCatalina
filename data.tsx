@@ -27,31 +27,31 @@ export const itemsNavbar = [
         id: 1,
         title: "Home",
         icon: <FaHome size={20} />,
-        link: "#home",
+        link: "/#home",
     },
     {
         id: 2,
         title: "User",
         icon: <FaUser size={20} />,
-        link: "#about-me",
+        link: "/#about-me",
     },
     {
         id: 3,
         title: "Book",
         icon: <FaBook size={20} />,
-        link: "#lecture",
+        link: "/#lecture",
     },
     {
         id: 4,
         title: "Target",
         icon: <FaComment size={20} />,
-        link: "#testimonios",
+        link: "/#testimonios",
     },
     {
         id: 5,
         title: "Home",
         icon: <FaMailBulk size={20} />,
-        link: "#contact",
+        link: "/#contact",
     },
 ];
 

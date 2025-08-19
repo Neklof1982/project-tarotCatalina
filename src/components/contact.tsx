@@ -9,6 +9,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { useState } from "react";
+import { Checkbox } from "./ui/checkbox";
 
 const Contact = () => {
 
@@ -23,7 +24,11 @@ const Contact = () => {
         }, {
             message: "Por favor ingresa un correo electrónico válido",
         }),
-        message: z.string().min(10, "El mensaje debe tener al menos 10 caracteres")
+        message: z.string().min(10, "El mensaje debe tener al menos 10 caracteres"),
+        // CHECKBOX npx shadcn-ui@latest add checkbox 
+        acceptPolicy: z.boolean().refine((val) => val === true, {
+            message: "Debes aceptar las políticas de privacidad",
+        }),
     })
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -31,7 +36,8 @@ const Contact = () => {
         defaultValues: {
             username: "",
             email: "",
-            message: ""
+            message: "",
+            acceptPolicy: false
         },
     })
 
@@ -107,6 +113,26 @@ const Contact = () => {
                                         <FormMessage />
                                     </FormItem>
                                 }
+                            />
+                            <FormField
+                                control={form.control}
+                                name="acceptPolicy"
+                                render={({ field }) => (
+                                    <FormItem className="flex items-start space-x-3 space-y-0">
+                                        <FormControl>
+                                            <Checkbox
+                                                checked={field.value}
+                                                onCheckedChange={field.onChange}
+                                            />
+                                        </FormControl>
+                                        <div className="space-y-1 leading-none">
+                                            <label htmlFor="acceptPolicy" className="text-sm">
+                                                Acepto las <a href="/privacy" className="text-blue-400">políticas de privacidad</a>
+                                            </label>
+                                        </div>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
                             />
                             <Button type="submit">Enviar</Button>
                         </form>
