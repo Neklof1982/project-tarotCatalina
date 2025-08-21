@@ -31,7 +31,7 @@ Este proyecto está completamente desarrollado en **TypeScript** para aprovechar
 
 ## Vista Previa 👀  
 
-![Vista Previa](./images/vistaPrevia.jpg)
+![Vista Previa](./public/images/vistaPrevia.jpg)
 
 ---
 
