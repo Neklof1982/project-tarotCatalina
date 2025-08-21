@@ -11,9 +11,9 @@ export async function POST(req: Request) {
     const dataForm = await req.json();
 
     const data = await resend.emails.send({
-      from: "Tarot de Cata <onboarding@resend.dev>",
+      from: "Acme <onboarding@resend.dev>",
       to: ["ecradu92@gmail.com"],
-      subject: "Cita de Tarot con Cata",
+      subject: "CT con Cata",
       react: (
         <EmailTemplate
           firstName={dataForm.username}
