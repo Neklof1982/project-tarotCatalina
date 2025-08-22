@@ -1,33 +1,56 @@
-import { Resend } from "resend";
-import { EmailTemplate } from "@/components/email-template";
 import { NextResponse } from "next/server";
-
-// Api Key Resend
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
-    // Datos del onSubmit
+    // Datos del formulario
     const dataForm = await req.json();
 
-    const data = await resend.emails.send({
-      from: "Tarot de Cata <onboarding@resend.dev>",
-      to: ["ktajustlove@hotmail.com"],
-      subject: "Cita de Tarot con Cata",
-      react: (
-        <EmailTemplate
-          firstName={dataForm.username}
-          email={dataForm.email}
-          message={dataForm.message}
-        />
-      ),
+    // Generar HTML directamente como string
+    const htmlContent = `
+      <div>
+        <h1>Mail enviado de: ${dataForm.username}</h1>
+        <h2>Correo de contacto: ${dataForm.email}</h2>
+        <h3>Mensaje: ${dataForm.message}</h3>
+      </div>
+    `;
 
-      text: "Petición",
+    // Payload Brevo
+    const payload = {
+      sender: { name: "Tarot de Cata", email: "955c7d001@smtp-brevo.com" },
+      to: [{ email: "ktajustlove@hotmail.com" }],
+      subject: "Cita de Tarot con Cata",
+      htmlContent: htmlContent,
+    };
+
+    // Enviar email usando fetch a Brevo
+    const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "api-key": process.env.BREVO_API_KEY!,
+      },
+      body: JSON.stringify(payload),
     });
 
-    return NextResponse.json(data);
-  } catch (error) {
-    console.error("Error al enviar el email:", error);
-    return NextResponse.json({ error: "Fallo al enviar email" }, { status: 500 });
+    const result = await response.json();
+
+    if (!response.ok) {
+      console.error("Error Brevo:", result);
+      return NextResponse.json(
+        { error: result.message || "Error enviando email" },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({ success: true, data: result });
+  } catch (error: unknown) {
+    console.error("Error enviando email:", error);
+
+    let message = "Error desconocido";
+    if (error instanceof Error) {
+      message = error.message;
+    }
+
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
