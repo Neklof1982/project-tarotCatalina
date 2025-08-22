@@ -5,6 +5,8 @@ export async function POST(req: Request) {
     // Datos del formulario
     const dataForm = await req.json();
 
+    console.log("BREVO_API_KEY:", process.env.BREVO_API_KEY);
+
     // Generar HTML directamente como string
     const htmlContent = `
       <div>
@@ -16,7 +18,7 @@ export async function POST(req: Request) {
 
     // Payload Brevo
     const payload = {
-      sender: { name: "Tarot de Cata", email: "955c7d001@smtp-brevo.com" },
+      sender: { name: "Tarot de Cata", email: "955c7d002@smtp-brevo.com" },
       to: [{ email: "ktajustlove@hotmail.com" }],
       subject: "Cita de Tarot con Cata",
       htmlContent: htmlContent,
