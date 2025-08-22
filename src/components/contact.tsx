@@ -49,6 +49,7 @@ const Contact = () => {
         // React to HTML npm install @react-email/render
         const response = await fetch("/api/send", {
             method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(values)
         })
         if (response.status === 200) {
