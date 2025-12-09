@@ -13,7 +13,7 @@ import { Checkbox } from "./ui/checkbox";
 
 const Contact = () => {
 
-    const [successForm, setSuccessForm] = useState(false)
+    const [sucessForm, setSucessForm] = useState(false)
 
     const formSchema = z.object({
         username: z.string().min(2, "El nombre debe tener al menos dos caracteres").max(50, "El nombre debe tener menos de 50 caracteres"),
@@ -45,16 +45,22 @@ const Contact = () => {
 
         // Depuración de pruebas (quitar async)
         // console.log(values)
-
-        // React to HTML npm install @react-email/render
-        const response = await fetch("/api/send", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(values)
-        })
-        if (response.status === 200) {
-            setSuccessForm(true)
-            form.reset()
+        try {
+            // React to HTML npm install @react-email/render
+            const response = await fetch("/api/send", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(values)
+            })
+            if (response.ok) {
+                setSucessForm(true)
+                form.reset()
+                setTimeout(() => setSucessForm(false), 5000)
+            } else {
+                console.error("Error enviando el formulario")
+            }
+        } catch (error) {
+            console.error("Error en el envío:", error)
         }
     }
 
@@ -64,68 +70,70 @@ const Contact = () => {
             <h3 className="text-xl text-gray-400 text-center mb-6">Ponte en contacto conmigo</h3>
             <div className="mt-8 col-spam-2 ">
                 {/* FORM npx shadcn@latest add form */}
-                <Form {...form} onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 border-slate-400 border-2 rounded-lg p-10">
-                    {successForm ? (
-                        <h4 className="text-center border-2 border-purple p-6 mb-6">Mensaje enviado con éxito</h4>
-                    ) : (
-                        <>
-                            <FormField
-                                control={form.control}
-                                name="username"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormControl>
-                                            <Input placeholder="Tu nombre" {...field} className="dark:bg-slate-800" />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                            <FormField
-                                control={form.control}
-                                name="email"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormControl>
-                                            <Input placeholder="Tu e-mail" {...field} className="dark:bg-slate-800" />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                            <FormField
-                                control={form.control}
-                                name="message"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormControl>
-                                            <Textarea placeholder="Escribe tu mensaje" {...field} className="dark:bg-slate-800" />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                            <FormField
-                                control={form.control}
-                                name="acceptPolicy"
-                                render={({ field }) => (
-                                    <FormItem className="flex items-start space-x-3 space-y-0">
-                                        <FormControl>
-                                            <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                                        </FormControl>
-                                        <div className="space-y-1 leading-none">
-                                            <label htmlFor="acceptPolicy" className="text-sm">
-                                                Acepto las <a href="/privacy" className="text-blue-400">políticas de privacidad</a>
-                                            </label>
-                                        </div>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                            <Button type="submit">Enviar</Button>
-                        </>
-                    )}
-                </Form>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 border-slate-400 border-2 rounded-lg p-10">
+                    <Form {...form}>
+                        <FormField
+                            control={form.control}
+                            name="username"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormControl>
+                                        <Input placeholder="Tu nombre" {...field} className="dark:bg-slate-800" />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="email"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormControl>
+                                        <Input placeholder="Tu e-mail" {...field} className="dark:bg-slate-800" />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="message"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormControl>
+                                        <Textarea placeholder="Escribe tu mensaje" {...field} className="dark:bg-slate-800" />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="acceptPolicy"
+                            render={({ field }) => (
+                                <FormItem className="flex items-start space-x-3 space-y-0">
+                                    <FormControl>
+                                        <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                                    </FormControl>
+                                    <div className="space-y-1 leading-none">
+                                        <label htmlFor="acceptPolicy" className="text-sm">
+                                            Acepto las <a href="/privacy" className="text-blue-400">políticas de privacidad</a>
+                                        </label>
+                                    </div>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                        <Button type="submit">Enviar</Button>
+
+                        {sucessForm && (
+                            <h4 className="text-center border-2 border-purple p-6 mt-6">
+                                Mensaje enviado con éxito
+                            </h4>
+                        )}
+                    </Form>
+                </form>
             </div>
         </div>
     );
