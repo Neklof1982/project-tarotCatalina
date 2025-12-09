@@ -54,7 +54,7 @@ const Contact = () => {
         })
         if (response.status === 200) {
             setSuccessForm(true)
-             form.reset()
+            form.reset()
         }
     }
 
@@ -64,57 +64,46 @@ const Contact = () => {
             <h3 className="text-xl text-gray-400 text-center mb-6">Ponte en contacto conmigo</h3>
             <div className="mt-8 col-spam-2 ">
                 {/* FORM npx shadcn@latest add form */}
-                <Form {...form}>
+                <Form {...form} onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 border-slate-400 border-2 rounded-lg p-10">
                     {successForm ? (
                         <h4 className="text-center border-2 border-purple p-6 mb-6">Mensaje enviado con éxito</h4>
                     ) : (
-                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 border-slate-400 border-2 rounded-lg p-10">
+                        <>
                             <FormField
                                 control={form.control}
                                 name="username"
-                                render={({ field }) =>
+                                render={({ field }) => (
                                     <FormItem>
                                         <FormControl>
-                                            {/* INPUT npx shadcn@latest add input*/}
-                                            <Input
-                                                placeholder="Tu nombre"
-                                                {...field}
-                                                className="dark:bg-slate-800" />
+                                            <Input placeholder="Tu nombre" {...field} className="dark:bg-slate-800" />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
-                                }
+                                )}
                             />
                             <FormField
                                 control={form.control}
                                 name="email"
-                                render={({ field }) =>
+                                render={({ field }) => (
                                     <FormItem>
                                         <FormControl>
-                                            <Input
-                                                placeholder="Tu e-mail"
-                                                {...field}
-                                                className="dark:bg-slate-800" />
+                                            <Input placeholder="Tu e-mail" {...field} className="dark:bg-slate-800" />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
-                                }
+                                )}
                             />
                             <FormField
                                 control={form.control}
                                 name="message"
-                                render={({ field }) =>
+                                render={({ field }) => (
                                     <FormItem>
                                         <FormControl>
-                                            {/* TEXTAREA npx shadcn@latest add textarea*/}
-                                            <Textarea
-                                                placeholder="Escribe tu mensaje"
-                                                {...field}
-                                                className="dark:bg-slate-800" />
+                                            <Textarea placeholder="Escribe tu mensaje" {...field} className="dark:bg-slate-800" />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
-                                }
+                                )}
                             />
                             <FormField
                                 control={form.control}
@@ -122,10 +111,7 @@ const Contact = () => {
                                 render={({ field }) => (
                                     <FormItem className="flex items-start space-x-3 space-y-0">
                                         <FormControl>
-                                            <Checkbox
-                                                checked={field.value}
-                                                onCheckedChange={field.onChange}
-                                            />
+                                            <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                                         </FormControl>
                                         <div className="space-y-1 leading-none">
                                             <label htmlFor="acceptPolicy" className="text-sm">
@@ -137,7 +123,7 @@ const Contact = () => {
                                 )}
                             />
                             <Button type="submit">Enviar</Button>
-                        </form>
+                        </>
                     )}
                 </Form>
             </div>
