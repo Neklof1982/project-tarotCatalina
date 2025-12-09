@@ -13,7 +13,7 @@ import { Checkbox } from "./ui/checkbox";
 
 const Contact = () => {
 
-    const [sucessForm, setSucessForm] = useState(false)
+    const [successForm, setSuccessForm] = useState(false)
 
     const formSchema = z.object({
         username: z.string().min(2, "El nombre debe tener al menos dos caracteres").max(50, "El nombre debe tener menos de 50 caracteres"),
@@ -53,7 +53,8 @@ const Contact = () => {
             body: JSON.stringify(values)
         })
         if (response.status === 200) {
-            setSucessForm(true)
+            setSuccessForm(true)
+             form.reset()
         }
     }
 
@@ -64,7 +65,7 @@ const Contact = () => {
             <div className="mt-8 col-spam-2 ">
                 {/* FORM npx shadcn@latest add form */}
                 <Form {...form}>
-                    {sucessForm ? (
+                    {successForm ? (
                         <h4 className="text-center border-2 border-purple p-6 mb-6">Mensaje enviado con éxito</h4>
                     ) : (
                         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 border-slate-400 border-2 rounded-lg p-10">
