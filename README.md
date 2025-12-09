@@ -1,16 +1,16 @@
 # Tarot con Cata 🃏✨  
 
-![Next.js](https://img.shields.io/badge/Next.js-%20%2B-black)
-![React](https://img.shields.io/badge/React-%20%2B-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-%20%2B-blue)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-%20%2B-lightblue)
-![ShadCN](https://img.shields.io/badge/ShadCN-%20%2B-orange)
-![Zod](https://img.shields.io/badge/Zod-%20%2B-darkgreen)
-![Next Themes](https://img.shields.io/badge/Next_Themes-%20%2B-purple)
-![React Hook Form](https://img.shields.io/badge/React_Hook_Form-%20%2B-yellow)
-![Autoprefixer](https://img.shields.io/badge/Autoprefixer-%20%2B-lightgreen)
-![ESLint](https://img.shields.io/badge/ESLint-%20%2B-yellowgreen)
-![Tailwind Merge](https://img.shields.io/badge/Tailwind_Merge-%20%2B-pink)
+![Next.js](https://img.shields.io/badge/Next.js-v15.4.6-black)
+![React](https://img.shields.io/badge/React-v19.1.0-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-v5.0-blue)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v4.1.11-lightblue)
+![ShadCN](https://img.shields.io/badge/ShadCN-v1.0-orange)
+![Zod](https://img.shields.io/badge/Zod-v4.0.17-darkgreen)
+![Next Themes](https://img.shields.io/badge/Next_Themes-v0.4.6-purple)
+![React Hook Form](https://img.shields.io/badge/React_Hook_Form-v7.62.0-yellow)
+![Autoprefixer](https://img.shields.io/badge/Autoprefixer-v10.4.21-lightgreen)
+![ESLint](https://img.shields.io/badge/ESLint-v9.0-yellowgreen)
+![Tailwind Merge](https://img.shields.io/badge/Tailwind_Merge-v3.3.1-pink)
 
 
 **Tarot con Cata** es una experiencia única en la web para explorar el misterio y la sabiduría del tarot. Interactúa con las cartas, descubre lecturas personalizadas y sumérgete en la magia del tarot en un diseño limpio y accesible. La página está optimizada para ser intuitiva y atractiva, con un sistema de cartas interactivas, múltiples tipos de lecturas y testimonios reales de usuarios que ya han descubierto sus respuestas.
