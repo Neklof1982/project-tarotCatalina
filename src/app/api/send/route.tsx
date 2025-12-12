@@ -18,7 +18,7 @@ export async function POST(req: Request) {
 
     // Payload Brevo
     const payload = {
-      sender: { name: "Tarot de Cata", email: "neklof1982@hotmail.com" },
+      sender: { name: "Tarot de Cata", email: "noreply@brevo.com" },
       to: [{ email: "ktajustlove@hotmail.com" }],
       subject: "Cita de Tarot con Cata",
       htmlContent: htmlContent,
